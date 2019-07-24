@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Baseball</title>
+</head>
+
+<body>
+  <div id="buttons"></div>
+  <button data-person="derek jeter">
+    I am a champion
+
+  <div id="images">
+    <img src="https://media1.giphy.com/media/j5qh3g0IGbW9y/200.webp?cid=790b76115d387771594e2f6277681930&rid=200.webp">
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    //Handle the click on the button
+    $("#button").on("click", function() {
+      //Grabbing and storing the data-person property value from the button
+      var derekjeter=$(this).attr("derek-jeter");
+      //Constructing a queryURL using the person name
+      var queryURL = "https://api.giphy.com/v1/gifs/translate?api_key=Is6kfKdiEuvQxZQ3nNXJMv8MuPFkZp5y&s=jquery";
+          
+      //Make request to the api
+    
+      $.ajax({
+        url: queryURL,
+        method: "Get"
+
+      })
+
+        //We create  a callback function to handle the response from the API
+        .then(function() {
+          var results= response.data;
+          for (var i=0; i< results.length; i++){
+            var gifDiv= $("div");
+            var rating= results[i].rating;
+            var p= $("p").text("G"+ g)
+          }
+
+          //We get the Image Url from the api response
+          var imageUrl = response.data.image_original_url;
+
+          //We create an image tag with jQuery
+          var personImage = $("<img>");
+          personImage.attr("src",results[i])
+          .images.fixed_height.url
+          gifDiv.prepend(p);
+          gifDiv.prepend(person);
+          $("#gifs-appear-here").prepend(gifDiv);
+
+          //We set the image tag source as the Image URL
+          
+          derekjeter.attr("src", imageUrl);
+          derekjeter.attr("alt", "derek jeter img");
+
+          //Add the new image to the images container
+          $("#https://media1.giphy.com/media/j5qh3g0IGbW9y/200.webp?cid=790b76115d387771594e2f6277681930&rid=200.webp").prepend(peronImage);
+
+          
+        });
+    });
+  </script>
+</body>e
+
+</html>
